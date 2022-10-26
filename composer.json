@@ -1,6 +1,6 @@
 {
-    "name": "estaduardo/bienesraices_inicio",
-    "description": "Proyecto bienes raices con POO",
+    "name": "estaduardo/bienesraicesmvc",
+    "description": "Proyecto bienes raices con POO y MVC",
     "type": "project",
     "authors": [
         {
@@ -11,8 +11,10 @@
         "intervention/image": "^2.7"
     },
     "autoload": {
-        "psr4": {
-            "App\\": "./clases"
+        "psr-4": {
+            "Model\\": "./models",
+            "MVC\\": "./",
+            "Controllers\\": "./controllers"
         }
     }
 }
