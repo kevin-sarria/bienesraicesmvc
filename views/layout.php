@@ -1,5 +1,10 @@
-<?php 
-    $auth = true;
+<?php
+    if(!isset($_SESSION)){
+        session_start();
+    }
+     
+    $auth = $_SESSION['login'] ?? false;
+
     if( !isset($inicio) ) {
         $inicio = false;
     }
@@ -37,8 +42,11 @@
                     <a href="/propiedades">Anuncios</a>
                     <a href="/blog">Blog</a>
                     <a href="/contacto">Contacto</a>
+                    <?php if(!$auth): ?>
+                        <a href="/login">Iniciar Sesion</a>
+                    <?php endif; ?>
                     <?php if($auth): ?>
-                        <a href="/cerrar-sesion">Cerrar sesion</a>
+                        <a href="/logout">Cerrar sesion</a>
                     <?php endif; ?>
                 </nav>
             </div>
